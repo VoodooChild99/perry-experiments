@@ -5,6 +5,7 @@ from loguru import logger
 
 if 'QEMU_DIR' in os.environ:    
     QEMU_HW_ARM_PATH = Path(os.environ['QEMU_DIR']) / "hw/arm"
+    QEMU_DIR = Path(os.environ['QEMU_DIR'])
     if not QEMU_HW_ARM_PATH.exists():
         logger.error("Failed to locate hw/arm directory under {}. This is rare.".format(QEMU_HW_ARM_PATH))
         os._exit(1)
@@ -415,3 +416,15 @@ def patch_stm32l0():
         logger.success("{} patched".format(stm32l0_path))
     else:
         logger.error("Failed to patch {}".format(stm32l0_path))
+
+if __name__ == '__main__':
+    patch_sam4expro()
+    patch_sam4lek()
+    patch_sam4s()
+    patch_same70()
+    patch_samv71()
+    patch_stm32f0()
+    patch_stm32f4()
+    patch_stm32f7()
+    patch_stm32l0()
+    os.system("cd {}/build && make -j$(nproc)".format(QEMU_DIR))

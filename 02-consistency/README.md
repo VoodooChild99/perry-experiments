@@ -1,24 +1,40 @@
 # Perry Consistency Experiment
-In this experiment, we use p2im unit tests to validate the consistency of `Perry`-generated hardware models. The unit test binaries are placed under [`p2im-unit-tests`](./p2im-unit-tests). [`groundtruth.toml`] records the involved unit tests and the passing conditions.
+In this experiment, we use P2IM unit tests to validate the consistency of `Perry`-generated hardware models. The unit test binaries are placed under [`02-consistency/p2im-unit-tests`](./p2im-unit-tests). [`groundtruth.toml`](./groundtruth.toml) records the involved unit tests and the passing conditions. 
+
+## Preparation
+You must finish the experiments in [`01-efficiency`](../01-efficiency/) to generate hardware models.
 
 ## Running the experiment
-1. First, integrate `Perry`-generated hardware models into QEMU and rebuild it.
+
+### Running without manual intervention
+**Steps:**
+1. Integrate `Perry`-generated hardware models into QEMU and rebuild it. If you are running within a container, `QEMU_DIR=/root/qemu PERRY_OUTPUT_DIR=/root/perry-experiments/01-efficiency/exp-1`.
 ```shell
 # PERRY_OUTPUT_DIR points to the directory where *.c files locate
 QEMU_DIR=/path/to/qemu PERRY_OUTPUT_DIR=/path/to/perry_output_dir ./prepare_qemu_emu.sh
 ```
 
-2. Run unit tests and collect the passing rate. Note that the passing rate and failed unit tests are directly printed on the screen.
+2. Run unit tests and collect the passing rate. Note that the passing rate and failed unit tests are directly printed on the screen. If you are running within a container, `QEMU_DIR=/root/qemu`.
 ```shell
 QEMU_DIR=/path/to/qemu python run.py
 ```
 
-3. Now apply patches to fix the models and run the unit tests again. You should be able to achieve a 100% passing rate. If some of the I2C unit tests fail (which could happen sometime), please retry running the unit tests multiple times.
+**Expected results:**
+You should be able to get a 49/66 (74.24%) passing rate at this point according to Table 3 in the paper.
+
+### Running after fixing models
+**Steps:**
+1. Apply patches to fix the models. If you are running within a container, `QEMU_DIR=/root/qemu`.
 ```shell
-# patch models
-QEMU_DIR=/path/to/qemu python patch.py
-# build QEMU
-cd /path/to/qemu/build && make -j$(nproc)
-# run the unit tests again
+QEMU_DIR=/path/to/qemu python patch_and_build.py
+```
+
+2. Run the unit tests again. If some of the I2C unit tests fail (which could happen sometime), please try running the unit tests multiple times. If you are running within a container, `QEMU_DIR=/root/qemu`.
+```shell
 QEMU_DIR=/path/to/qemu python run.py
 ```
+
+**Expected results:**
+You should be able to achieve a 100% passing rate according to Table 3 in the paper. 
+
+To check the patches, you can search for the string `PERRY PATCH` within the patched model files (`/root/qemu/hw/arm/*.c`), which should be consistent with Table 3 ("Loc to Fix").

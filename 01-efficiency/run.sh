@@ -22,15 +22,14 @@ for i in $(seq 1 $REPEAT); do
     fi
 done
 
-for target in "${targets[@]}"
-do
-    for i in $(seq 1 $REPEAT); do
+for i in $(seq 1 $REPEAT); do
+    for target in "${targets[@]}"; do
         echo "[+] running Perry on $target, round $i"
         begin_time=$(date +%s%N)
         python "$PERRY_PATH"/synthesizer/synthesize.py -c "$PERRY_PATH/synthesizer/example/$target/config.yaml" -o "$DIR/exp-$i" -a &> "$DIR/exp-$i/$target.log"
         end_time=$(date +%s%N)
         mv perry-*.json "$DIR/exp-$i"
-        elapsed_time=$(python -c "print(($end_time - $begin_time) / 1000000000)")
+        elapsed_time=$(python -c "print(($end_time - $begin_time) / (1000000000 * 60))")
         echo "$target, $i, $elapsed_time" >> "$DIR"/result.csv
     done
 done

@@ -6,7 +6,7 @@
 /03-universality/*.trace
 
 # fuzzer outputs
-/06-liteos-fuzzing/*/out*
+/05-liteos-fuzzing/*/out*
 
 # pipes
 /*.in
