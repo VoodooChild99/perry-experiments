@@ -1,7 +1,6 @@
 # intermediate results
-/01-efficiency/*.log
+/01-efficiency/exp-*
 /01-efficiency/result.csv
-/01-efficiency/*.c
 
 # traces
 /03-universality/*.trace
