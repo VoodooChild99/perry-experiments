@@ -1,3 +1,4 @@
+import argparse
 import tomlkit
 import os
 import subprocess
@@ -99,12 +100,14 @@ def run_one(bin, config, timeout):
     
 DEFAULT_TIMEOUT=2
 
-def main():
+def main(args):
     with open(GROUNDTRUTH_PATH, 'r') as f:
         binaries = tomlkit.load(f)
     success = []
     failed = []
     for bin in binaries:
+        if args.retry_i2c and 'I2C' not in bin:
+            continue
         timeout = DEFAULT_TIMEOUT
         if bin == 'NUTTX-F103-I2C':
             logger.info("Testing NUTTX-F103-I2C takes more time, please be patient")
@@ -129,9 +132,12 @@ def main():
         logger.info("Failed unit tests: {}".format(failed))
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--retry-i2c', action='store_true', default=False)
+    args = parser.parse_args()
     # create pipes
     os.system("{}/create_pipes.sh 5".format(ROOT.parent))
     try:
-        main()
+        main(args)
     except KeyboardInterrupt:
         logger.info("Interrupt by user, exit")

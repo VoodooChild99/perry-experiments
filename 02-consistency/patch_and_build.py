@@ -133,6 +133,7 @@ def patch_stm32f1():
             continue
         if 'stm32f1_i2c_update(t);' in line:
             end_processed = True
+            new_lines.insert(-1, '\t// PERRY PATCH\n')
             new_lines.insert(-1, '\tt->SR2 &= (~(0x4));\n')
             i2c_patched = True
             continue

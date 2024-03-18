@@ -20,6 +20,6 @@ cp "$DIR"/meson-fuzz.patch "$FUZZ_QEMU_DIR"/meson.patch || exit 1
 
 cd "$FUZZ_QEMU_DIR" || exit 1
 git apply default.patch && git apply kconfig.patch && git apply meson.patch
-QEMU_PATH=$FUZZ_QEMU_DIR python "$DIR"/liteos-fuzz/patch.py
+QEMU_PATH=$FUZZ_QEMU_DIR python "$DIR"/patch.py
 
 cd build && make -j$(nproc)

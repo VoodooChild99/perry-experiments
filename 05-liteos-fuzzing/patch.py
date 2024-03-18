@@ -37,6 +37,7 @@ if __name__ == '__main__':
     new_lines = []
     start_processed = False
     rcc_patched = False
+    end_processed = False
 
     for line in lines:
         new_lines.append(line)
@@ -57,7 +58,6 @@ if __name__ == '__main__':
                 new_lines.append('\t\t\tif ((!(value & 0x10000))) {\n')
                 rcc_patched = True
 
-    end_processed = False
     if patched and rcc_patched:
         with open(stm32f7_path, 'w') as f:
             f.writelines(new_lines)
