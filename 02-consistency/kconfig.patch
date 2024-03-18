@@ -1,0 +1,53 @@
+diff --git a/hw/arm/Kconfig b/hw/arm/Kconfig
+index 17fcde8e1c..5512cf0b37 100644
+--- a/hw/arm/Kconfig
++++ b/hw/arm/Kconfig
+@@ -568,3 +568,48 @@ config ARMSSE
+     select UNIMP
+     select SSE_COUNTER
+     select SSE_TIMER
++
++config STM32F072
++    select ARM_V7M
++
++config STM32F103
++    select ARM_V7M
++
++config STM32F407
++    select ARM_V7M
++
++config STM32F769
++    select ARM_V7M
++
++config STM32L073
++    select ARM_V7M
++
++config FRDM_K22F
++    select ARM_V7M
++
++config FRDM_K64F
++    select ARM_V7M
++
++config FRDM_K82F
++    select ARM_V7M
++
++config FRDM_KL25Z
++    select ARM_V7M
++
++config ATSAM3X8E
++    select ARM_V7M
++
++config ATSAM4E16E
++    select ARM_V7M
++
++config ATSAM4LC4C
++    select ARM_V7M
++
++config ATSAM4S16C
++    select ARM_V7M
++
++config ATSAME70Q21B
++    select ARM_V7M
++
++config ATSAMV71Q21B
++    select ARM_V7M

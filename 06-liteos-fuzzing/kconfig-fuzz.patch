@@ -1,0 +1,11 @@
+diff --git a/hw/arm/Kconfig b/hw/arm/Kconfig
+index e652590943..8117bb2688 100644
+--- a/hw/arm/Kconfig
++++ b/hw/arm/Kconfig
+@@ -549,3 +549,6 @@ config ARMSSE
+     select UNIMP
+     select SSE_COUNTER
+     select SSE_TIMER
++
++config STM32F769
++    select ARM_V7M

@@ -1,0 +1,341 @@
+[ARDUINO-F103-ADC]
+board = "stm32f103"
+input = ["adc1"]
+unittest = [
+    { desc = "read value", pass = ["HAL_ADC_GetValue"] }
+]
+
+[NUTTX-F103-ADC]
+board = "stm32f103"
+input = ["adc1"]
+unittest = [
+    { desc = "read value", pass = [0x08004000] }
+]
+
+[K64F-RIOT-ADC]
+board = "nxp_frdm_k64f"
+input = ["adc0"]
+unittest = [
+    { desc = "read value", pass = [0x0000136A, 0x000010B4] }
+]
+
+[ARDUINO-SAM3-ADC]
+board = "atsam3x8e"
+input = ["adc"]
+unittest = [
+    { desc = "read value", pass = ["adc_get_latest_value"] }
+]
+
+[SAM3-RIOT-ADC]
+board = "atsam3x8e"
+input = ["adc"]
+unittest = [
+    { desc = "read value", pass = [0x00080ADC, 0x00080AE8] }
+]
+
+[ARDUINO-SAM3-DAC]
+board = "atsam3x8e"
+input = ["adc"]
+unittest = [
+    { desc = "write value", pass = ["loop", 0x00080A62] }
+]
+
+[SAM3-RIOT-DAC]
+board = "atsam3x8e"
+input = []
+unittest = [
+    { desc = "write value", pass = ["main", 0x00080B72] }
+]
+
+[ARDUINO-F103-GPIO]
+board = "stm32f103"
+input = []
+unittest = [
+    { desc = "read pin", pass = ["HAL_GPIO_ReadPin"] },
+    { desc = "write pin", pass = ["HAL_GPIO_WritePin"] }
+]
+
+[ARDUINO-F103-GPIO_INT]
+board = "stm32f103"
+input = ["exti"]
+unittest = [
+    { desc = "interrupt callback", pass = ["_Z5blinkv"] }
+]
+
+[F103-RIOT-GPIO]
+board = "stm32f103"
+input = []
+unittest = [
+    { desc = "read pin", pass = ["gpio_read"] },
+    { desc = "write pin", pass = ["gpio_set", "gpio_clear"] }
+]
+
+[F103-RIOT-GPIO_INT]
+board = "stm32f103"
+input = ["exti"]
+unittest = [
+    { desc = "interrupt callback", pass = ["gpioCB"] }
+]
+
+[NUTTX-F103-GPIO]
+board = "stm32f103"
+input = []
+unittest = [
+    { desc = "read pin", pass = [0x080074ce] },
+    { desc = "write pin", pass = [0x080074e4] }
+]
+
+[NUTTX-F103-GPIO_INT]
+board = "stm32f103"
+input = ["exti"]
+unittest = [
+    { desc = "interrupt callback", pass = ["intHelper"] }
+]
+
+[K64F-RIOT-GPIO]
+board = "nxp_frdm_k64f"
+input = []
+unittest = [
+    { desc = "read pin", pass = [0x000010e4] },
+    { desc = "write pin", pass = [0x000010da, "gpio_set"] }
+]
+
+[K64F-RIOT-GPIO_INT]
+board = "nxp_frdm_k64f"
+input = ["portc"]
+unittest = [
+    { desc = "interrupt callback", pass = ["gpioCB"] }
+]
+
+[ARDUINO-SAM3-GPIO]
+board = "atsam3x8e"
+input = []
+unittest = [
+    { desc = "read pin", pass = ["PIO_Get"] },
+    { desc = "write pin", pass = ["loop", "PIO_SetOutput", "PIO_PullUp"] }
+]
+
+[ARDUINO-SAM3-GPIO_INT]
+board = "atsam3x8e"
+input = ["piob"]
+unittest = [
+    { desc = "interrupt callback", pass = ["_Z5blinkv"] }
+]
+
+[SAM3-RIOT-GPIO]
+board = "atsam3x8e"
+input = []
+unittest = [
+    { desc = "read pin", pass = ["gpio_read"] },
+    { desc = "write pin", pass = ["gpio_set"] }
+]
+
+[SAM3-RIOT-GPIO_INT]
+board = "atsam3x8e"
+input = [{ if = "piob", value = 25 }]
+unittest = [
+    { desc = "interrupt callback", pass = ["gpioCB"] }
+]
+
+[ARDUINO-F103-PWM]
+board = "stm32f103"
+input = ["adc1"]
+unittest = [
+    { desc = "basic config", pass = ["TIM_CCxChannelCmd"] }
+]
+
+[NUTTX-PWM]
+board = "stm32f103"
+input = []
+unittest = [
+    { desc = "basic config", pass = ["helper_finish"] }
+]
+
+[K64F-RIOT-PWM]
+board = "nxp_frdm_k64f"
+input = []
+unittest = [
+    { desc = "basic config", pass = [0x00001096] }
+]
+
+[ARDUINO-SAM3-PWM]
+board = "atsam3x8e"
+input = ["adc"]
+unittest = [
+    { desc = "basic config", pass = ["loop", 0x0008122c] }
+]
+
+[SAM3-RIOT-PWM]
+board = "atsam3x8e"
+input = []
+unittest = [
+    { desc = "basic config", pass = [0x00080bf2] }
+]
+
+[ARDUINO-F103-I2C]
+board = "stm32f103"
+input = ["i2c1"]
+unittest = [
+    { desc = "recv bytes", pass = [0x080017c0] },
+    { desc = "tranmit bytes", pass = [0x08001696] }
+]
+
+[NUTTX-F103-I2C]
+board = "stm32f103"
+input = ["i2c1"]
+unittest = [
+    { desc = "recv bytes", pass = [0x080074a8] }
+]
+
+[K64F-RIOT-I2C]
+board = "nxp_frdm_k64f"
+input = ["i2c0"]
+unittest = [
+    { desc = "recv bytes", pass = [0x00001684] },
+    { desc = "tranmit bytes", pass = [0x00001668] }
+]
+
+[ARDUINO-SAM3-I2C]
+board = "atsam3x8e"
+input = ["twi1"]
+unittest = [
+    { desc = "recv bytes", pass = ["TWI_ReadByte"] },
+    { desc = "tranmit bytes", pass = [0x00080284] }
+]
+
+[ARDUINO-F103-Serial]
+board = "stm32f103"
+input = ["usart2"]
+unittest = [
+    { desc = "recv bytes", pass = [0x0800306E] },
+    { desc = "tranmit bytes", pass = ["_ZN14HardwareSerial16_tx_complete_irqEP8serial_s"] }
+]
+
+[F103-RIOT-USART]
+board = "stm32f103"
+input = []
+unittest = [
+    { desc = "tranmit bytes", pass = [0x080007D8] }
+]
+
+[F103-RIOT-USART-Read]
+board = "stm32f103"
+input = ["usart2"]
+unittest = [
+    { desc = "recv bytes", pass = ["_pop"] }
+]
+
+[NUTTX-USART]
+board = "stm32f103"
+input = ["usart1"]
+unittest = [
+    { desc = "recv bytes", pass = [0x0800757A] },
+    { desc = "tranmit bytes", pass = ["up_send"] }
+]
+
+[K64F-RIOT-USART]
+board = "nxp_frdm_k64f"
+input = ["uart0"]
+unittest = [
+    { desc = "tranmit bytes", pass = [0x00000D44, 0x00001168] }
+]
+
+[K64F-RIOT-USART-Read]
+board = "nxp_frdm_k64f"
+input = ["uart0"]
+unittest = [
+    { desc = "recv bytes", pass = ["_pop"] }
+]
+
+[SAM3-RIOT-USART]
+board = "atsam3x8e"
+input = []
+unittest = [
+    { desc = "tranmit bytes", pass = [0x0008098C] }
+]
+
+[SAM3-RIOT-USART-Read]
+board = "atsam3x8e"
+input = ["uart"]
+unittest = [
+    { desc = "recv bytes", pass = ["_pop"] }
+]
+
+[ARDUINO-SAM3-Serial]
+board = "atsam3x8e"
+input = ["uart"]
+unittest = [
+    { desc = "recv bytes", pass = [0x00080b90, 0x00080cb4] },
+    { desc = "tranmit bytes", pass = [0x00080d32] }
+]
+
+[ARDUINO-F103-SPI]
+board = "stm32f103"
+input = ["spi1"]
+unittest = [
+    { desc = "recv bytes", pass = [0x080021DE] },
+    { desc = "tranmit bytes", pass = [0x080020C0] }
+]
+
+[F103-RIOT-SPI]
+board = "stm32f103"
+input = ["spi1"]
+unittest = [
+    { desc = "recv bytes", pass = [0x08000fa6] },
+    { desc = "tranmit bytes", pass = [0x08000f9c] }
+]
+
+[NUTTX-SPI]
+board = "stm32f103"
+input = ["spi1"]
+unittest = [
+    { desc = "recv bytes", pass = [0x0800D22E] }
+]
+
+[K64F-RIOT-SPI]
+board = "nxp_frdm_k64f"
+input = ["spi0"]
+unittest = [
+    { desc = "recv bytes", pass = [0x0000136C] },
+    { desc = "tranmit bytes", pass = [0x00001340] }
+]
+
+[ARDUINO-SAM3-SPI]
+board = "atsam3x8e"
+input = ["spi0"]
+unittest = [
+    { desc = "recv bytes", pass = ["loop", 0x000803A2] },
+    { desc = "tranmit bytes", pass = ["loop", 0x0008039A] }
+]
+
+[SAM3-RIOT-SPI]
+board = "atsam3x8e"
+input = ["spi0"]
+unittest = [
+    { desc = "recv bytes", pass = [0x00080CD4] },
+    { desc = "tranmit bytes", pass = [0x00080CDE] }
+]
+
+[F103-RIOT-TIMER]
+board = "stm32f103"
+input = []
+unittest = [
+    { desc = "interrupt callback", pass = ["timerCB"] },
+    { desc = "read counter", pass = ["timer_read"] }
+]
+
+[K64F-RIOT-TIMER]
+board = "nxp_frdm_k64f"
+input = []
+unittest = [
+    { desc = "interrupt callback", pass = ["timerCB"] },
+    { desc = "read counter", pass = [0x00001400] }
+]
+
+[SAM3-RIOT-TIMER]
+board = "atsam3x8e"
+input = []
+unittest = [
+    { desc = "interrupt callback", pass = ["timerCB"] },
+    { desc = "read counter", pass = [0x00080ab8, 0x00080ad4] }
+]

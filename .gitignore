@@ -1,0 +1,14 @@
+# intermediate results
+/01-efficiency/*.log
+/01-efficiency/result.csv
+/01-efficiency/*.c
+
+# traces
+/03-universality/*.trace
+
+# fuzzer outputs
+/06-liteos-fuzzing/*/out*
+
+# pipes
+/*.in
+/*.out

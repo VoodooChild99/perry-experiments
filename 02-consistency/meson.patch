@@ -1,0 +1,25 @@
+diff --git a/hw/arm/meson.build b/hw/arm/meson.build
+index 92f9f6e000..e62442d2f3 100644
+--- a/hw/arm/meson.build
++++ b/hw/arm/meson.build
+@@ -63,4 +63,20 @@ arm_ss.add(when: 'CONFIG_ARM_SMMUV3', if_true: files('smmu-common.c', 'smmuv3.c'
+ arm_ss.add(when: 'CONFIG_FSL_IMX6UL', if_true: files('fsl-imx6ul.c', 'mcimx6ul-evk.c'))
+ arm_ss.add(when: 'CONFIG_NRF51_SOC', if_true: files('nrf51_soc.c'))
+ 
++arm_ss.add(when: 'CONFIG_STM32F072', if_true: files('stm32f072.c'))
++arm_ss.add(when: 'CONFIG_STM32F103', if_true: files('stm32f103.c'))
++arm_ss.add(when: 'CONFIG_STM32F407', if_true: files('stm32f407.c'))
++arm_ss.add(when: 'CONFIG_STM32F769', if_true: files('stm32f769.c'))
++arm_ss.add(when: 'CONFIG_STM32L073', if_true: files('stm32l073.c'))
++arm_ss.add(when: 'CONFIG_FRDM_K22F', if_true: files('nxp_frdm_k22f.c'))
++arm_ss.add(when: 'CONFIG_FRDM_K64F', if_true: files('nxp_frdm_k64f.c'))
++arm_ss.add(when: 'CONFIG_FRDM_K82F', if_true: files('nxp_frdm_k82f.c'))
++arm_ss.add(when: 'CONFIG_FRDM_KL25Z', if_true: files('nxp_frdm_kl25z.c'))
++arm_ss.add(when: 'CONFIG_ATSAM3X8E', if_true: files('atsam3x8e.c'))
++arm_ss.add(when: 'CONFIG_ATSAM4E16E', if_true: files('atsam4e16e.c'))
++arm_ss.add(when: 'CONFIG_ATSAM4LC4C', if_true: files('atsam4lc4c.c'))
++arm_ss.add(when: 'CONFIG_ATSAM4S16C', if_true: files('atsam4s16c.c'))
++arm_ss.add(when: 'CONFIG_ATSAME70Q21B', if_true: files('atsame70q21b.c'))
++arm_ss.add(when: 'CONFIG_ATSAMV71Q21B', if_true: files('atsamv71q21b.c'))
++
+ hw_arch += {'arm': arm_ss}

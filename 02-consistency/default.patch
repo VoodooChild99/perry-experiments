@@ -1,0 +1,24 @@
+diff --git a/configs/devices/arm-softmmu/default.mak b/configs/devices/arm-softmmu/default.mak
+index 6985a25377..b11a9ce9bb 100644
+--- a/configs/devices/arm-softmmu/default.mak
++++ b/configs/devices/arm-softmmu/default.mak
+@@ -42,3 +42,19 @@ CONFIG_FSL_IMX6UL=y
+ CONFIG_SEMIHOSTING=y
+ CONFIG_ARM_COMPATIBLE_SEMIHOSTING=y
+ CONFIG_ALLWINNER_H3=y
++
++CONFIG_STM32F072=y
++CONFIG_STM32F103=y
++CONFIG_STM32F407=y
++CONFIG_STM32F769=y
++CONFIG_STM32L073=y
++CONFIG_FRDM_K22F=y
++CONFIG_FRDM_K64F=y
++CONFIG_FRDM_K82F=y
++CONFIG_FRDM_KL25Z=y
++CONFIG_ATSAM3X8E=y
++CONFIG_ATSAM4E16E=y
++CONFIG_ATSAM4LC4C=y
++CONFIG_ATSAM4S16C=y
++CONFIG_ATSAME70Q21B=y
++CONFIG_ATSAMV71Q21B=y

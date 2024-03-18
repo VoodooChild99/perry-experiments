@@ -1,0 +1,135 @@
+[Drone]
+board = "stm32f103"
+input = ["i2c1", "usart1"]
+
+[Gateway]
+board = "stm32f103"
+input = ["i2c1", "usart2", "adc1"]
+
+[Reflow_Oven]
+board = "stm32f103"
+input = ["usart2", "adc1"]
+
+[Robot]
+board = "stm32f103"
+input = ["i2c1", "usart1"]
+
+[Soldering_Iron]
+board = "stm32f103"
+input = ["i2c1", "adc1"]
+
+[CNC]
+board = "stm32f407"
+input = ["usart2"]
+
+[PLC]
+board = "stm32f407"
+input = ["usart3"]
+
+[Console]
+board = "nxp_frdm_k64f"
+input = ["uart0"]
+shell = true
+
+[Heat_Press]
+board = "atsam3x8e"
+input = ["uart"]
+
+[Steering_Control]
+board = "atsam3x8e"
+input = ["uart"]
+
+[k22f-zephyr-shell]
+board = "nxp_frdm_k22f"
+input = ["uart1"]
+shell = true
+
+[k64f-zephyr-shell]
+board = "nxp_frdm_k64f"
+input = ["uart0"]
+shell = true
+
+[kl25z-zephyr-shell]
+board = "nxp_frdm_kl25z"
+input = ["uart0"]
+shell = true
+
+[k82f-zephyr-shell]
+board = "nxp_frdm_k82f"
+input = ["lpuart4"]
+shell = true
+
+[stm32f0-zephyr-shell]
+board = "stm32f072"
+input = ["usart2"]
+shell = true
+
+[stm32f0-liteos-shell]
+board = "stm32f072"
+input = ["usart2"]
+shell = true
+
+[stm32f1-zephyr-shell]
+board = "stm32f103"
+input = ["usart1"]
+shell = true
+
+[stm32f1-liteos-shell]
+board = "stm32f103"
+input = ["usart1"]
+shell = true
+
+[stm32f4-zephyr-shell]
+board = "stm32f407"
+input = ["usart2"]
+shell = true
+
+[stm32f4-liteos-shell]
+board = "stm32f407"
+input = ["usart1"]
+shell = true
+
+[stm32f7-zephyr-shell]
+board = "stm32f769"
+input = ["usart1"]
+shell = true
+
+[stm32f7-liteos-shell]
+board = "stm32f769"
+input = ["usart1"]
+shell = true
+
+[stm32l0-zephyr-shell]
+board = "stm32l073"
+input = ["usart2"]
+shell = true
+
+[stm32l0-liteos-shell]
+board = "stm32l073"
+input = ["usart2"]
+shell = true
+
+[sam4expro-zephyr-shell]
+board = "atsam4e16e"
+input = ["uart0"]
+shell = true
+
+[sam4lek-zephyr-shell]
+board = "atsam4lc4c"
+input = ["usart2"]
+shell = true
+
+[sam4sxplained-zephyr-shell]
+board = "atsam4s16c"
+input = ["uart0"]
+shell = true
+
+[same70xplained-zephyr-shell]
+board = "atsame70q21b"
+input = ["usart1"]
+shell = true
+
+[samv71xult-zephyr-shell]
+board = "atsamv71q21b"
+input = ["usart1"]
+shell = true
