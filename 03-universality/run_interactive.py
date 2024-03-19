@@ -49,7 +49,7 @@ def main():
     for bin in configs:
         if 'shell' not in configs[bin] or not configs[bin]['shell']:
             continue
-        logger.info("Execute {}".format(bin))
+        logger.info("Executing {}. This is a shell firmware, enter \"help\" to see a list of supported commands and play with it. Press Ctrl-C to run the next firmware.".format(bin))
         try:
             run_one(bin, configs[bin])
         except KeyboardInterrupt:

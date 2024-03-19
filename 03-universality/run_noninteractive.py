@@ -69,7 +69,7 @@ def main():
         if 'shell' in configs[bin] and configs[bin]['shell']:
             continue
         timeout = DEFAULT_TIMEOUT
-        logger.info("Execute {} for {} seconds".format(bin, timeout))
+        logger.info("Executing {} for {} seconds".format(bin, timeout))
         run_one(bin, configs[bin], timeout)
 
 if __name__ == '__main__':
