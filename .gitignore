@@ -5,6 +5,11 @@
 # traces
 /03-universality/*.trace
 
+# exp file
+/04-cve-reproduce/exp
+/04-cve-reproduce/HCIPacket/__pycache__
+/04-cve-reproduce/zephyr.log
+
 # fuzzer outputs
 /05-liteos-fuzzing/*/out*
 
