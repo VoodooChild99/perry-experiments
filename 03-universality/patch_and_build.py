@@ -238,6 +238,16 @@ def patch_stm32f0():
     new_lines = []
     for line in lines:
         new_lines.append(line)
+        if 't->CFGR1 = value;' in line and not write_patched:
+            new_lines.append('\t\t\t// PERRY PATCH\n')
+            new_lines.append('\t\t\tif ((value & 3) == 3) { t->cpu->env.v7m.vecbase[0] = 0x20000000; }\n')
+            write_patched = True
+            continue
+        if 'sysbus_mmio_map(SYS_BUS_DEVICE(p8), 0, 0x40010000);' in line and not init_patched:
+            new_lines.append('\t// PERRY PATCH\n')
+            new_lines.append('\tp8->cpu = ARM_CPU(first_cpu);\n')
+            init_patched = True
+            continue
         if end_processed or (struct_patched and write_patched and init_patched):
             continue
         if 'struct STM32F0SYSCFG {' in line:
@@ -253,16 +263,6 @@ def patch_stm32f0():
                 new_lines.append('\tARMCPU *cpu;\n')
                 struct_patched = True
                 continue
-        if 't->CFGR1 = value;' in line and not write_patched:
-            new_lines.append('\t\t\t// PERRY PATCH\n')
-            new_lines.append('\t\t\tif ((value & 3) == 3) { t->cpu->env.v7m.vecbase[0] = 0x20000000; }\n')
-            write_patched = True
-            continue
-        if 'sysbus_mmio_map(SYS_BUS_DEVICE(p8), 0, 0x40010000);' in line and not init_patched:
-            new_lines.append('\t// PERRY PATCH\n')
-            new_lines.append('\tp8->cpu = ARM_CPU(first_cpu);\n')
-            init_patched = True
-            continue
     
     lines = new_lines
     new_lines = []
@@ -280,7 +280,7 @@ def patch_stm32f0():
             new_lines.append('\t\t\t// {}\n'.format(line.strip()))
             new_lines.append('\t\t\tif ((!(value & 0x10000))) {\n')
             continue
-        if '}' in line:
+        if start_processed and '}' in line:
             end_processed = True
             continue
         if start_processed and not end_processed:
@@ -384,6 +384,16 @@ def patch_stm32l0():
     new_lines = []
     for line in lines:
         new_lines.append(line)
+        if 't->CFGR1 = value;' in line and not write_patched:
+            new_lines.append('\t\t\t// PERRY PATCH\n')
+            new_lines.append('\t\t\tif ((value & 3) == 3) { t->cpu->env.v7m.vecbase[0] = 0x20000000; }\n')
+            write_patched = True
+            continue
+        if 'sysbus_mmio_map(SYS_BUS_DEVICE(p7), 0, 0x40010000);' in line and not init_patched:
+            new_lines.append('\t// PERRY PATCH\n')
+            new_lines.append('\tp7->cpu = ARM_CPU(first_cpu);\n')
+            init_patched = True
+            continue
         if end_processed or (struct_patched and write_patched and init_patched):
             continue
         if 'struct STM32L0SYSCFG {' in line:
@@ -399,16 +409,6 @@ def patch_stm32l0():
                 new_lines.append('\tARMCPU *cpu;\n')
                 struct_patched = True
                 continue
-        if 't->CFGR1 = value;' in line and not write_patched:
-            new_lines.append('\t\t\t// PERRY PATCH\n')
-            new_lines.append('\t\t\tif ((value & 3) == 3) { t->cpu->env.v7m.vecbase[0] = 0x20000000; }\n')
-            write_patched = True
-            continue
-        if 'sysbus_mmio_map(SYS_BUS_DEVICE(p7), 0, 0x40010000);' in line and not init_patched:
-            new_lines.append('\t// PERRY PATCH\n')
-            new_lines.append('\tp7->cpu = ARM_CPU(first_cpu);\n')
-            init_patched = True
-            continue
 
     if struct_patched and write_patched and init_patched:
         with open(stm32l0_path, 'w') as f:
