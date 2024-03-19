@@ -1,5 +1,5 @@
 # Perry Efficiency Experiment
-This experiment uses `Perry` to synthesize hardware models for targets listed in Table 2. The consumed time to synthesize each model is collected to measure `Perry`'s efficiency. We conduct experiments for each MCU 5 times as stated in the paper (Section 5.2 "Efficiency").
+This is the experiment described in Section 5.2 ("Efficiency") of our paper, where we use `Perry` to synthesize hardware models for targets listed in Table 2. The consumed time to synthesize each model is collected to measure `Perry`'s efficiency. We conduct experiments for each MCU 5 times as stated in the paper (Section 5.2 "Efficiency").
 
 ## Running the experiment
 Execute the following commands:

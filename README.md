@@ -4,8 +4,14 @@ This directory contains the data required to reproduce the experiments described
 
 For driver source code we used in our experiments, please refer to [this repo](https://github.com/VoodooChild99/perry-drivers).
 
-## Preparation
-It is assumed that you have built Perry with Docker as described [here](https://github.com/VoodooChild99/perry?tab=readme-ov-file#build-with-docker). All experiments should be conducted within the built container (execute `/perry/run_docker.sh` to launch a shell). This repository will be located under the `/root/perry-experiments` directory within the container.
+## Requirements
+The following **HOST** environment is tested:
+* Ubuntu 20.04
+* A machine equipped with a Bluetooth device
+
+## Preparations
+It is assumed that you have built Perry with Docker as described [here](https://github.com/VoodooChild99/perry?tab=readme-ov-file#build-with-docker).
+All experiments should be conducted within the built container (execute `/perry/run_docker.sh` to launch a shell). This repository will be located under the `/root/perry-experiments` directory within the container.
 
 ## Directory Layout
 | Directories/Files | Experiment |

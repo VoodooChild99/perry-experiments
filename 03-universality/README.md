@@ -1,5 +1,5 @@
 # Perry Universality Experiment
-In this experiment, we use `P2IM` firmware samples and several `Zephyr`/`LiteOS` shell firmware samples to validate the universality of `Perry`-generated hardware models. The firmware samples are placed under [`firmware`](./firmware). [`config.toml`](./config.toml) records basic information about these firmware (e.g., input interfaces).
+This is the experiment described in Section 5.2 ("Universality" and "Scalability") of our paper, where we emulate `P2IM` firmware samples and several `Zephyr`/`LiteOS` shell firmware samples to validate the universality of `Perry`-generated hardware models. The firmware samples are placed under [`firmware`](./firmware). [`config.toml`](./config.toml) records basic information about these firmware (e.g., input interfaces).
 
 ## Preparation
 You need to finish the experiments in [`02-consistency`](../02-consistency).

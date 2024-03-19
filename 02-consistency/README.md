@@ -1,5 +1,5 @@
 # Perry Consistency Experiment
-In this experiment, we use P2IM unit tests to validate the consistency of `Perry`-generated hardware models. The unit test binaries are placed under [`02-consistency/p2im-unit-tests`](./p2im-unit-tests). [`groundtruth.toml`](./groundtruth.toml) records the involved unit tests and the passing conditions. 
+This is the experiment described in Section 5.2 ("Consistency" and "Scalability") of our paper, where we use P2IM unit tests passing rate to measure the consistency of `Perry`-generated hardware models. The unit test binaries are placed under [`02-consistency/p2im-unit-tests`](./p2im-unit-tests). [`groundtruth.toml`](./groundtruth.toml) records the involved unit tests and the passing conditions. 
 
 ## Preparation
 You must finish the experiments in [`01-efficiency`](../01-efficiency/) to generate hardware models.
