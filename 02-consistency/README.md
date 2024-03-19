@@ -29,9 +29,13 @@ You should be able to get a 49/66 (74.24%) passing rate at this point according 
 QEMU_DIR=/path/to/qemu python patch_and_build.py
 ```
 
-2. Run the unit tests again. If some of the I2C unit tests fail (which could happen sometime), please try running the unit tests multiple times. If you are running within a container, `QEMU_DIR=/root/qemu`.
+2. Run the unit tests again. If you are running within a container, `QEMU_DIR=/root/qemu`.
 ```shell
 QEMU_DIR=/path/to/qemu python run.py
+```
+If some of the I2C unit tests fail (which could happen sometime), please try running the unit tests multiple times:
+```shell
+QEMU_DIR=/path/to/qemu python run.py --retry-i2c
 ```
 
 **Expected results:**
