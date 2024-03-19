@@ -21,7 +21,7 @@ All experiments should be conducted within the built container (execute `/perry/
 | [03-universality](./03-universality) | Emulating various firmware samples as described in Section 5.2 ("Universality" and "Scalability") |
 | [spec-violation-bugs.md](./spec-violation-bugs.md) | The specification violation bugs we found in drivers as described in Section 6.1 |
 | [04-cve-reproducing](./04-cve-reproduce) | Reproducing firmware CVEs as described in Section 6.2 ("CS-II") |
-| [05-consistency](./05-liteos-fuzzing) | Fuzzing LiteOS as described in Section 6.2 ("CS-III") |
+| [05-liteos-fuzzing](./05-liteos-fuzzing) | Fuzzing LiteOS as described in Section 6.2 ("CS-III") |
 
 ## Running the Experiments
-Please refer to the `README` files in [01-efficiency](./01-efficiency), [02-consistency](./02-consistency), [03-universality](./03-universality), [04-cve-reproducing](./04-cve-reproduce) and [05-consistency](./05-liteos-fuzzing) for detailed instructions.
+Please refer to the `README` files in [01-efficiency](./01-efficiency), [02-consistency](./02-consistency), [03-universality](./03-universality), [04-cve-reproducing](./04-cve-reproduce) and [05-liteos-fuzzing](./05-liteos-fuzzing) for detailed instructions.
