@@ -7,7 +7,7 @@ For driver source code we used in our experiments, please refer to [this repo](h
 ## Requirements
 The following **HOST** environment is tested:
 * Ubuntu 20.04
-* A machine equipped with a Bluetooth device
+* A machine equipped with a Bluetooth device, if you want to replicate [04-cve-reproducing](./04-cve-reproduce)
 
 ## Preparations
 It is assumed that you have built Perry with Docker as described [here](https://github.com/VoodooChild99/perry?tab=readme-ov-file#build-with-docker).
