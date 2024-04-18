@@ -5,6 +5,11 @@ This is the experiment described in Section 5.2 ("Universality" and "Scalability
 You need to finish the experiments in [`02-consistency`](../02-consistency).
 
 ## Running the experiment
+0. Change directory
+```shell
+cd perry-experiments/03-universality
+```
+
 1. Fix models by applying patches and rebuild QEMU. If you are running within a container, `QEMU_DIR=/root/qemu`.
 ```shell
 QEMU_DIR=/path/to/qemu python patch_and_build.py

@@ -2,8 +2,11 @@
 This is the experiment described in Section 5.2 ("Efficiency") of our paper, where we use `Perry` to synthesize hardware models for targets listed in Table 2. The consumed time to synthesize each model is collected to measure `Perry`'s efficiency. We conduct experiments for each MCU 5 times as stated in the paper (Section 5.2 "Efficiency").
 
 ## Running the experiment
-Execute the following commands:
+Execute the following commands. If you are running within a container, `PERRY_PATH=/root/perry`
 ```shell
+# change directory
+cd perry-experiments/01-efficiency
+# Then run the experiment
 PERRY_PATH=/path/to/perry ./run.sh
 ```
 

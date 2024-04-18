@@ -5,6 +5,11 @@ This is the experiment described in Section 6.2 ("Fuzzing RTOS for Vulnerabiliti
 You must finish the experiments in [`01-efficiency`](../01-efficiency/) to generate hardware models.
 
 ## Running the experiment
+0. Change directory:
+```shell
+cd perry-experiments/05-liteos-fuzzing
+```
+
 1. Prepare the **HOST** machine for fuzzing. Please note that the following commands should be executed on the **HOST** machine:
 ```shell
 wget https://raw.githubusercontent.com/AFLplusplus/AFLplusplus/stable/afl-system-config

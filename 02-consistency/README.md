@@ -8,6 +8,12 @@ You must finish the experiments in [`01-efficiency`](../01-efficiency/) to gener
 
 ### Running without manual intervention
 **Steps:**
+
+0. Change directory
+```shell
+cd perry-experiments/02-consistency
+```
+
 1. Integrate `Perry`-generated hardware models into QEMU and rebuild it. If you are running within a container, `QEMU_DIR=/root/qemu PERRY_OUTPUT_DIR=/root/perry-experiments/01-efficiency/exp-1`.
 ```shell
 # PERRY_OUTPUT_DIR points to the directory where *.c files locate
