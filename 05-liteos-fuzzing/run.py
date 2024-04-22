@@ -76,6 +76,34 @@ def fuzz_one(q):
         except KeyboardInterrupt:
             return
 
+def collect_stats():
+    content = "target, speed, execs, paths, crashes, hangs\n"
+    for t in TARGETS:
+        statfile = ROOT_DIR / t / "out0/fuzzer_stats"
+        execs_per_sec = None
+        execs_done = None
+        paths_total = None
+        unique_crashes = None
+        unique_hangs = None
+        with open(statfile, 'r') as f:
+            stats = f.readlines()
+        for s in stats:
+            s = s.strip()
+            if s.startswith("execs_per_sec"):
+                execs_per_sec = float(s[s.find(":") + 2:])
+            elif s.startswith("execs_done"):
+                execs_done = int(s[s.find(":") + 2:])
+            elif s.startswith("paths_total"):
+                paths_total = int(s[s.find(":") + 2:])
+            elif s.startswith("unique_crashes"):
+                unique_crashes = int(s[s.find(":") + 2:])
+            elif s.startswith("unique_hangs"):
+                unique_hangs = int(s[s.find(":") + 2:])
+        content += f"{t}, {execs_per_sec}, {execs_done}, {paths_total}, {unique_crashes}, {unique_hangs}\n"
+    with open(ROOT_DIR / "result.csv", "w") as f:
+        f.write(content)
+        
+
 def main():
     tasks = []
     # get tasks
@@ -113,6 +141,7 @@ def main():
         for p in workers:
             p.kill()
             p.join()
+        collect_stats()
 
 if __name__ == "__main__":
     main()

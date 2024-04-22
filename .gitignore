@@ -12,6 +12,7 @@
 
 # fuzzer outputs
 /05-liteos-fuzzing/*/out*
+/05-liteos-fuzzing/result.csv
 
 # pipes
 /*.in

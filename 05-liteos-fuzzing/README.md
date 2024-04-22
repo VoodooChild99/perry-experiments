@@ -28,4 +28,10 @@ AFL_PATH=/path/to/AFL QEMU_PATH=/path/to/qemu-system-fuzzing python run.py
 ```
 
 ## Expected Results
-The fuzzer will output its result into the `out0` directory under the directory of each target (e.g., `mqtt_ack/out0`). You can check `out0/fuzzer_stats` to get the execution speed (`execs_per_sec`), the total number of executions (`execs_done`), the number of paths (`paths_total`), the number of crashes (`unique_crashes`) and the number of hangs (`unique_hangs`). These numbers should be comparable with those listed in Table 6
+The results are stored in `result.csv`, and the numbers should be comparable with those listed in Talbe 6 of the paper. Here are the explanations of the numbers listed in `result.csv`:
+* **target**: the fuzzed target
+* **speed**: the number of fuzzing executions per second
+* **execs**: the total number of fuzzing executions
+* **paths**: the total number of paths explored during fuzzing
+* **crashes**: the total number of crashes triggered during fuzzing
+* **hangs**: the total number of hangs triggered during fuzzing
