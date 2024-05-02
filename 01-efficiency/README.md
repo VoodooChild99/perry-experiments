@@ -16,6 +16,8 @@ cd perry-experiments/01-efficiency
 PERRY_PATH=/path/to/perry ./run.sh
 ```
 
+> If you want to conduct a quick experiment, set `REPEAT` to `1` (instead of `5`) in `run.sh` to run only one round.
+
 ## Expected Results
 * `01-efficiency/result.csv` records the time `Perry` consumes to synthesize a hardware model for a target, which should be comparable with Figure 3 in the paper.
 

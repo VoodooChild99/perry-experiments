@@ -32,4 +32,6 @@ QEMU_DIR=/path/to/qemu python run_interactive.py
 * For non-interactive firmware samples, you should be able to get full execution traces (`*.trace`) indicating successful emulation.
 * For interactive firmware samples, you should be able to interact with the emulated shell.
 
+> The `ubsantest` command in `LiteOS` shells deliberately triggers various undefined behaviors to test our UBSAN runtime implementation for `LiteOS`. However, since the provided binaries are not compiled with UBSAN to catch these UBs, this command is expected to crash/hang the (emulated) OS or even the QEMU process.
+
 > To check the patches, you can search for the string `PERRY PATCH` within the patched model files (`/root/qemu/hw/arm/*.c`), which should be consistent with Table 5 ("Loc to Fix").
