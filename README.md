@@ -29,3 +29,10 @@ All experiments should be conducted within the built container (execute `/perry/
 
 ## Running the Experiments
 Please refer to the `README` files in [01-efficiency](./01-efficiency), [02-consistency](./02-consistency), [03-universality](./03-universality), [04-cve-reproducing](./04-cve-reproduce) and [05-liteos-fuzzing](./05-liteos-fuzzing) for detailed instructions.
+
+## Badges
+<p float="left">
+<img src="./assets/usenixbadges-available.svg" width="15%">
+<img src="./assets/usenixbadges-functional.svg" width="15%">
+<img src="./assets/usenixbadges-reproduced.svg" width="15%">
+</p>
