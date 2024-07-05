@@ -1,6 +1,6 @@
 # Perry Experiments
 
-This directory contains the data required to reproduce the experiments described in our USENIX 2024 paper: *A Friend's Eye is A Good Mirror: Synthesizing MCU Peripheral Models from Peripheral Drivers*.
+This directory contains the data required to reproduce the experiments described in our USENIX 2024 paper: [*A Friend's Eye is A Good Mirror: Synthesizing MCU Peripheral Models from Peripheral Drivers*](https://www.usenix.org/conference/usenixsecurity24/presentation/lei).
 
 For driver source code we used in our experiments, please refer to [this repo](https://github.com/VoodooChild99/perry-drivers).
 
