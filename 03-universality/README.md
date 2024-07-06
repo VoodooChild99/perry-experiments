@@ -14,17 +14,17 @@ You **MUST** finish the experiments in [`02-consistency`](../02-consistency).
 cd perry-experiments/03-universality
 ```
 
-1. Fix models by applying patches and rebuild QEMU. If you are running within a container, `QEMU_DIR=/root/qemu`.
+1. Fix models by applying patches and rebuild QEMU. If you are using the provided container, `QEMU_DIR=/root/qemu`.
 ```shell
 QEMU_DIR=/path/to/qemu python patch_and_build.py
 ```
 
-2. Execute non-interactive firmware samples. Non-interactive firmware samples include: `CNC`, `Drone`, `Gateway`, `Heat_Press`, `PLC`, `Reflow_Oven`, `Robot`, `Soldering_Iron`, `Steering_Control`. Run these firmware samples with the following commands. Note that each firmware sample will be executed for 10 seconds, its execution traces will be recorded and placed under `*.trace`. If you are running within a container, `QEMU_DIR=/root/qemu`.
+2. Execute non-interactive firmware samples. Non-interactive firmware samples include: `CNC`, `Drone`, `Gateway`, `Heat_Press`, `PLC`, `Reflow_Oven`, `Robot`, `Soldering_Iron`, `Steering_Control`. Run these firmware samples with the following commands. Note that each firmware sample will be executed for 10 seconds, its execution traces will be recorded and placed under `*.trace`. If you are using the provided container, `QEMU_DIR=/root/qemu`.
 ```shell
 QEMU_DIR=/path/to/qemu python run_noninteractive.py
 ```
 
-3. Execute interactive firmware samples. Interactive firmware samples include: `Console`, `*-shell`. Execute these firmware samples with the following command, and you should be able to see a shell launched. You can interact with it by entering and executing shell commands (e.g., `help`). Press `Ctrl-C` to interrupt emulating the current firmware and switch to the next firmware. If you are running within a container, `QEMU_DIR=/root/qemu`.
+3. Execute interactive firmware samples. Interactive firmware samples include: `Console`, `*-shell`. Execute these firmware samples with the following command, and you should be able to see a shell launched. You can interact with it by entering and executing shell commands (e.g., `help`). Press `Ctrl-C` to interrupt emulating the current firmware and switch to the next firmware. If you are using the provided container, `QEMU_DIR=/root/qemu`.
 ```shell
 QEMU_DIR=/path/to/qemu python run_interactive.py
 ```

@@ -8,7 +8,7 @@ This is the experiment described in Section 5.2 ("Efficiency") of our paper, whe
 > Estimated according to Figure 3 in the paper. 5 rounds, ~20 compute-hours per round -> 100 compute-hours
 
 ## Running the experiment
-Execute the following commands. If you are running within a container, `PERRY_PATH=/root/perry`
+Execute the following commands. If you are using the provided container, `PERRY_PATH=/root/perry`
 ```shell
 # change directory
 cd perry-experiments/01-efficiency
